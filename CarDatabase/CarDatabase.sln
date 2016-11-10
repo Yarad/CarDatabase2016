@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDatabase", "CarDatabase\CarDatabase.csproj", "{B9C32AA4-B27D-4465-9E78-8375D3AA5A37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDatabase_Admin", "CarDatabase\CarDatabase_Admin.csproj", "{B9C32AA4-B27D-4465-9E78-8375D3AA5A37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
