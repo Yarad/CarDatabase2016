@@ -14,6 +14,7 @@ namespace CarDatabase
         [STAThread]
         static void Main()
         {
+            NetWork ProjectNetWork = new NetWork();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

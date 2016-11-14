@@ -12,17 +12,57 @@ public enum TSeatsTuning { Nothing, ByHeight, Electrical, WithMemory };
 public class TFactory
 {
     public string FactoryName;
+    public TModel[] Models;
+
+    public TFactory(string FactoryName)
+    {
+        this.FactoryName = FactoryName;
+    }
+
+    public bool AddModel(string ModelName)
+    {
+        for (int i = 0; i < Models.Length; i++)
+            if (Models[i].ModelName == ModelName)
+                return false;
+        Models[Models.Length] = new TModel(ModelName);
+
+        return true;
+    }
 }
 
-public class TModel : TFactory
+public class TModel
 {
     public string ModelName;
+    public TGeneration[] Generations;
+
+    public TModel(string ModelName)
+    {
+        this.ModelName = ModelName;
+    }
+    
+    public bool AddGeneration(int Beg, int End)
+    {
+        for (int i = 0; i < Generations.Length; i++)
+            if (OtherFuncs.IsInRange(Beg, End, Generations[i].GenBegin, Generations[i].GenEnd))
+                return false;
+        Generations[Generations.Length] = new TGeneration(Beg,End);
+
+        return true;
+        
+    }
 }
 
-public class TGeneration : TModel
+public class TGeneration
 {
     public int GenBegin;
     public int GenEnd;
+    public TCarInfo[] ArrOfCarInfo;
+
+    public TGeneration(int Begin, int End)
+    {
+        this.GenBegin = Begin;
+        this.GenEnd = End;
+    }
 }
 
 
@@ -99,7 +139,7 @@ public struct Interior //интерьер, салон
 
 //конец структур для класса
 
-public class CarInfo : TGeneration
+public class TCarInfo
 {
     public TTransmission Transmission;
     public double EnginePower; //мощность 
@@ -115,12 +155,8 @@ public class CarInfo : TGeneration
     public AntiHijack AntiHijack;
     public Interior Interior;
 
-    public CarInfo() //конструктор
+    public TCarInfo() //конструктор
     {
-        FactoryName = "";
-        ModelName = "";
-        GenBegin = 0;
-        GenEnd = 0;
         Transmission = TTransmission.Mechanic;
         EnginePower = 0.0; //мощность 
         MaxSpeed = 0;
