@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Runtime.Serialization.Formatters.Binary;//для преобразования объекта в байтовые данные
 using System.IO;
+using System.Collections.Generic;
 
 
 [Serializable]
 public class CarInfoDatabase
 {
-    public TFactory[] Factories;
+    public List<TFactory> Factories;
 
     public bool AddFactory(string FactoryName)
     {
-        for (int i = 0; i < Factories.Length; i++)
+        for (int i = 0; i < Factories.Count; i++)
             if (Factories[i].FactoryName == FactoryName)
                 return false;
-        
-        Factories[Factories.Length] = new TFactory(FactoryName);
 
+        Factories.Add(new TFactory(FactoryName));
+        
         return true;
     }
 
@@ -23,10 +24,23 @@ public class CarInfoDatabase
     {
         if (Factories == null) return -1;
 
-        for (int i = 0; i < Factories.Length; i++)
+        for (int i = 0; i < Factories.Count; i++)
             if (String.Equals(Factories[i].FactoryName,InputStr))
                 return i;
             return -1;
+    }
+
+    public bool DeleteFactory(string FactoryName)
+    {
+        int res = FindFactory(FactoryName);
+        if (res != -1)
+        {
+            Factories.RemoveRange(res,1);
+            return true;
+        }
+        else
+            return false;
+
     }
 
     public bool SaveChanges()
@@ -72,6 +86,6 @@ public class CarInfoDatabase
     
     public CarInfoDatabase()
     {
-        Factories = new TFactory[0];
+        Factories = new List<TFactory>();
     }
 }

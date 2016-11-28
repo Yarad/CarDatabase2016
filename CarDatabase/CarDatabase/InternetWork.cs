@@ -44,7 +44,7 @@ public class NetWork
         {
             client.Connect(TimeoutFTP, FTP_SERVER, FTP_PORT);
             client.Login(TimeoutFTP, FTP_USER, FTP_PASSWORD);
-            client.GetFile(TimeoutFTP, FTP_FILE_PATH + FILE_NAME, FILE_NAME);
+            client.GetFile(TimeoutFTP, FILE_NAME, FTP_FILE_PATH + FILE_NAME);
         }
         catch (Exception ex)
         {

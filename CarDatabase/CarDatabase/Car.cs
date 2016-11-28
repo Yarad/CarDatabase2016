@@ -21,7 +21,7 @@ public class Strings
     public string[] StrSeatsTuning = {"Нет","По высоте","Электрические","С запомнанием\nположения" };
 }
 
-
+[Serializable]
 public class TFactory
 {
     public string FactoryName;
@@ -44,6 +44,7 @@ public class TFactory
     }
 }
 
+[Serializable]
 public class TModel
 {
     public string ModelName;
@@ -66,6 +67,7 @@ public class TModel
     }
 }
 
+[Serializable]
 public class TGeneration
 {
     public int GenBegin;
@@ -162,6 +164,7 @@ public struct Interior //интерьер, салон
 
 //конец структур для класса
 
+[Serializable]
 public class TCarInfo
 {
     public MainParams MainParams;

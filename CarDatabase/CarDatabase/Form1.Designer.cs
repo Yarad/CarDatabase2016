@@ -372,6 +372,7 @@
             this.pictureBoxDelFactory.Size = new System.Drawing.Size(34, 29);
             this.pictureBoxDelFactory.TabIndex = 2;
             this.pictureBoxDelFactory.TabStop = false;
+            this.pictureBoxDelFactory.Click += new System.EventHandler(this.pictureBoxDelFactory_Click);
             // 
             // comboBox1
             // 

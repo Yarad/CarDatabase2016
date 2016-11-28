@@ -37,15 +37,15 @@ namespace CarDatabase
             }
             //if (CurrDatabase.Factories == null) return;
 
-            for (int i = 0; i < CurrDatabase.Factories.Length; i++)
+            for (int i = 0; i < CurrDatabase.Factories.Count; i++)
                 comboBox1.Items.Add(CurrDatabase.Factories[i].FactoryName);
             //остально подгружается только в других этапах
         }
         public void LoadFactoryInfo(TFactory CurrFactory)
         {
             if (CurrFactory == null) return;
-            textBoxFactoryName.Lines[0] = CurrFactory.FactoryName;
-            textBoxURL.Lines[0] = CurrFactory.AboutInfoURL;
+            textBoxFactoryName.Text = CurrFactory.FactoryName;
+            textBoxURL.Text = CurrFactory.AboutInfoURL;
         }
 
         private void textBoxURL_TextChanged(object sender, EventArgs e)
@@ -73,10 +73,13 @@ namespace CarDatabase
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textBoxFactoryName.Clear();
+            textBoxURL.Clear();
+
             if (((ComboBox)sender).SelectedIndex != -1) //если выбрали марку
             {
-                FactoryIndex = MainCarDatabase.FindFactory(comboBox1.SelectedText);
-                if (FactoryIndex == -1)
+                FactoryIndex = MainCarDatabase.FindFactory(comboBox1.SelectedItem.ToString());
+                if ((FactoryIndex == -1) && !(String.Equals(comboBox1.SelectedItem.ToString(), ProjectStrings.InitFactoryName)))
                     MessageBox.Show(ProjectStrings.CarInfoWasNotFound);
 
                 if (!panelFactoryInfo.Visible)
@@ -107,8 +110,36 @@ namespace CarDatabase
                 pictureBoxAddGeneration.Enabled = false;
                 pictureBoxDelGeneration.Enabled = false;
             }
+            if ((FactoryIndex != -1) && !(String.Equals(comboBox1.SelectedItem.ToString(), ProjectStrings.InitFactoryName)))
+                LoadFactoryInfo(MainCarDatabase.Factories[FactoryIndex]);
+        }
 
-            LoadFactoryInfo(MainCarDatabase.Factories[FactoryIndex]);
+        private void pictureBoxAddFactory_Click(object sender, EventArgs e)
+        {
+
+            if (MainCarDatabase.AddFactory(ProjectStrings.InitFactoryName)) //добавили в объект
+            {
+                panelModelInfo.Hide();
+                panelCarInfo.Hide();
+                panelFactoryInfo.Show();
+
+                FactoryIndex = MainCarDatabase.FindFactory(ProjectStrings.InitFactoryName);
+                int temp = comboBox1.Items.Add(ProjectStrings.InitFactoryName);
+                comboBox1.SelectedIndex = temp;
+                //добавили в список
+            }
+        }
+
+        private void pictureBoxDelFactory_Click(object sender, EventArgs e)
+        {
+            if (MainCarDatabase.DeleteFactory(comboBox1.SelectedText)) //добавили в объект
+            {
+                panelModelInfo.Hide();
+                panelCarInfo.Hide();
+                panelFactoryInfo.Hide();
+                comboBox1.Items.Remove(comboBox1.SelectedItem);
+                //добавили в список
+            }
         }
 
         private void comboBoxModel_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,27 +168,14 @@ namespace CarDatabase
             }
         }
 
-        private void pictureBoxAddFactory_Click(object sender, EventArgs e)
-        {
-            
-            if (MainCarDatabase.AddFactory(ProjectStrings.InitFactoryName)) //добавили в объект
-            {
-                panelModelInfo.Hide();
-                panelCarInfo.Hide();
-                panelFactoryInfo.Show();
-
-                FactoryIndex = MainCarDatabase.FindFactory(ProjectStrings.InitFactoryName);
-                comboBox1.Items.Add(ProjectStrings.InitFactoryName);
-                comboBox1.SelectedText = ProjectStrings.InitFactoryName; //добавили в список
-            }
-        }
-
         private void buttonSaveChanges_Click(object sender, EventArgs e)
         {
             if (FactoryIndex != -1) //сохранение фабрики
             {
                 MainCarDatabase.Factories[FactoryIndex].FactoryName = textBoxFactoryName.Text;
                 MainCarDatabase.Factories[FactoryIndex].AboutInfoURL = textBoxURL.Text;
+                comboBox1.Items[comboBox1.SelectedIndex] = textBoxFactoryName.Text;
+
             }
 
             if (ModelIndex != -1)
@@ -167,8 +185,7 @@ namespace CarDatabase
             }
         }
 
-
-
+        
 
     }
 }
