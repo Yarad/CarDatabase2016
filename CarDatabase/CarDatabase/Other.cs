@@ -18,3 +18,9 @@ public class OtherFuncs
             return false;
     }
 }
+
+public class ProjectStrings
+{
+    public static string WasSaved = "Успешно сохранено.";
+    public static string WasNotSaved = "Ошибка сохранения на сервер.";
+}

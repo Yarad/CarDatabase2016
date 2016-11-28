@@ -10,11 +10,24 @@ using System.Windows.Forms;
 
 namespace CarDatabase
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public CarInfoDatabase MainCarDatabase;
+        public MainForm()
         {
+            this.MainCarDatabase = new CarInfoDatabase();
+            MainCarDatabase.UpdateInfo();
             InitializeComponent();
         }
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (MainCarDatabase.SaveChanges())
+                MessageBox.Show(ProjectStrings.WasSaved);
+            else
+                MessageBox.Show(ProjectStrings.WasNotSaved);
+
+        }
+
+        
     }
 }

@@ -9,6 +9,19 @@ public enum TMaterial { Other, Fabric, Velour, Leather, Combo };
 public enum TElectricalWindows { No, AheadOnly, Full };
 public enum TSeatsTuning { Nothing, ByHeight, Electrical, WithMemory };
 
+public class Strings
+{
+    public string[] StrBodyType = { "Седан","Универсал", "Хетчбэк", "Купе", "Лимузин", "Микроавтобус", "Минивэн", "Кабриолет", "Другое" };
+    public string[] StrFuelType = {"Бензин","Дизель","Газ","Гибрид","Электричество","Ракетное топливо" };
+    public string[] StrTransmission = { "Механика", "Автомат", "Роботизированная", "Вариатор" };
+    public string[] StrClimateControl = { "Нет", "Кондиционер", "1-сезонный климат-контроль", "2-сезонный климат-контроль", "3-сезонный климат-контроль" };
+    public string[] StrWheelAlignment = { "Нет", "Регулировка в 1 пл-сти", "Регулировка в 2 пл-стях", "Регулировка в 3 пл-стях" };
+    public string[] StrMaterial = { "Другой", "Ткань", "Велюр", "Кожа", "Комбинированный" };
+    public string[] StrElectricalWindows = {"Нет", "Передние окна","Все окна"};
+    public string[] StrSeatsTuning = {"Нет","По высоте","Электрические","С запомнанием\nположения" };
+}
+
+
 public class TFactory
 {
     public string FactoryName;
@@ -67,9 +80,18 @@ public class TGeneration
 
 
 //структуры для класса
+public struct MainParams
+{
+    public TTransmission Transmission;
+    public double EnginePower; //мощность 
+    public int MaxSpeed;
+    public double TimeTo100;    
+}
+
 public struct SizeParams
 {
     public TBodyType BodyType; //тип кузова
+    public int Length;
     public int Width;
     public int Height;
     public int MaxWeight;
@@ -141,11 +163,7 @@ public struct Interior //интерьер, салон
 
 public class TCarInfo
 {
-    public TTransmission Transmission;
-    public double EnginePower; //мощность 
-    public int MaxSpeed;
-    public double TimeTo100;
-
+    public MainParams MainParams;
     public SizeParams SizeParams;
     public Fuel Fuel;
     public Security Security;
@@ -157,12 +175,13 @@ public class TCarInfo
 
     public TCarInfo() //конструктор
     {
-        Transmission = TTransmission.Mechanic;
-        EnginePower = 0.0; //мощность 
-        MaxSpeed = 0;
-        TimeTo100 = 0.0;
+        MainParams.Transmission = TTransmission.Mechanic;
+        MainParams.EnginePower = 0.0; //мощность 
+        MainParams.MaxSpeed = 0;
+        MainParams.TimeTo100 = 0.0;
         
         SizeParams.BodyType = TBodyType.Другое; //тип кузова
+        SizeParams.Length = 0;
         SizeParams.Width = 0;
         SizeParams.Height = 0;
         SizeParams.MaxWeight = 0;

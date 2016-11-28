@@ -8,4 +8,4 @@ D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDataba
 D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\obj\Debug\CarDatabase_Admin.csproj.GenerateResource.Cache
 D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\bin\Debug\BytesRoad.Net.Ftp.dll
 D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\bin\Debug\BytesRoad.Net.Sockets.dll
-D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\obj\Debug\CarDatabase.Form1.resources
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\obj\Debug\CarDatabase.MainForm.resources
