@@ -23,4 +23,9 @@ public class ProjectStrings
 {
     public static string WasSaved = "Успешно сохранено.";
     public static string WasNotSaved = "Ошибка сохранения на сервер.";
+
+    public static string CarInfoWasNotFound = "Ошибка базы данных. Информация не найдена";
+
+    public static string InitFactoryName = "<название марки>";
+    
 }

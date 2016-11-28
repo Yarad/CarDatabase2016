@@ -25,6 +25,7 @@ public class Strings
 public class TFactory
 {
     public string FactoryName;
+    public string AboutInfoURL;
     public TModel[] Models;
 
     public TFactory(string FactoryName)

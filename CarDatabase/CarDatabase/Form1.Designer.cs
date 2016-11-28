@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonUpload = new System.Windows.Forms.Button();
             this.pictureBoxAddGeneration = new System.Windows.Forms.PictureBox();
             this.pictureBoxDelGeneration = new System.Windows.Forms.PictureBox();
             this.pictureBoxAddModel = new System.Windows.Forms.PictureBox();
@@ -173,7 +174,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxModelName = new System.Windows.Forms.TextBox();
-            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonSaveChanges = new System.Windows.Forms.Button();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -241,6 +242,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.buttonUpload);
             this.panel1.Controls.Add(this.pictureBoxAddGeneration);
             this.panel1.Controls.Add(this.pictureBoxDelGeneration);
             this.panel1.Controls.Add(this.pictureBoxAddModel);
@@ -256,10 +258,23 @@
             this.panel1.Size = new System.Drawing.Size(362, 371);
             this.panel1.TabIndex = 1;
             // 
+            // buttonUpload
+            // 
+            this.buttonUpload.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonUpload.Font = new System.Drawing.Font("Papyrus-RU", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpload.Location = new System.Drawing.Point(-1, 306);
+            this.buttonUpload.Name = "buttonUpload";
+            this.buttonUpload.Size = new System.Drawing.Size(362, 64);
+            this.buttonUpload.TabIndex = 8;
+            this.buttonUpload.Text = "Загрузить на сервер";
+            this.buttonUpload.UseVisualStyleBackColor = false;
+            this.buttonUpload.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // pictureBoxAddGeneration
             // 
             this.pictureBoxAddGeneration.BackgroundImage = global::CarDatabase.Properties.Resources.AddGreen;
             this.pictureBoxAddGeneration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxAddGeneration.Enabled = false;
             this.pictureBoxAddGeneration.InitialImage = null;
             this.pictureBoxAddGeneration.Location = new System.Drawing.Point(233, 164);
             this.pictureBoxAddGeneration.Name = "pictureBoxAddGeneration";
@@ -271,6 +286,7 @@
             // 
             this.pictureBoxDelGeneration.BackgroundImage = global::CarDatabase.Properties.Resources.DeleteGreen;
             this.pictureBoxDelGeneration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxDelGeneration.Enabled = false;
             this.pictureBoxDelGeneration.InitialImage = null;
             this.pictureBoxDelGeneration.Location = new System.Drawing.Point(273, 164);
             this.pictureBoxDelGeneration.Name = "pictureBoxDelGeneration";
@@ -282,6 +298,7 @@
             // 
             this.pictureBoxAddModel.BackgroundImage = global::CarDatabase.Properties.Resources.AddGreen;
             this.pictureBoxAddModel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxAddModel.Enabled = false;
             this.pictureBoxAddModel.InitialImage = null;
             this.pictureBoxAddModel.Location = new System.Drawing.Point(233, 115);
             this.pictureBoxAddModel.Name = "pictureBoxAddModel";
@@ -293,6 +310,7 @@
             // 
             this.pictureBoxDelModel.BackgroundImage = global::CarDatabase.Properties.Resources.DeleteGreen;
             this.pictureBoxDelModel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxDelModel.Enabled = false;
             this.pictureBoxDelModel.InitialImage = null;
             this.pictureBoxDelModel.Location = new System.Drawing.Point(273, 115);
             this.pictureBoxDelModel.Name = "pictureBoxDelModel";
@@ -308,6 +326,7 @@
             this.comboBoxGeneration.Size = new System.Drawing.Size(166, 29);
             this.comboBoxGeneration.TabIndex = 7;
             this.comboBoxGeneration.Tag = "";
+            this.comboBoxGeneration.SelectedIndexChanged += new System.EventHandler(this.comboBoxGeneration_SelectedIndexChanged);
             // 
             // comboBoxModel
             // 
@@ -317,6 +336,7 @@
             this.comboBoxModel.Size = new System.Drawing.Size(166, 29);
             this.comboBoxModel.TabIndex = 6;
             this.comboBoxModel.Tag = "";
+            this.comboBoxModel.SelectedIndexChanged += new System.EventHandler(this.comboBoxModel_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -339,11 +359,13 @@
             this.pictureBoxAddFactory.Size = new System.Drawing.Size(34, 29);
             this.pictureBoxAddFactory.TabIndex = 1;
             this.pictureBoxAddFactory.TabStop = false;
+            this.pictureBoxAddFactory.Click += new System.EventHandler(this.pictureBoxAddFactory_Click);
             // 
             // pictureBoxDelFactory
             // 
             this.pictureBoxDelFactory.BackgroundImage = global::CarDatabase.Properties.Resources.DeleteGreen;
             this.pictureBoxDelFactory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxDelFactory.Enabled = false;
             this.pictureBoxDelFactory.InitialImage = null;
             this.pictureBoxDelFactory.Location = new System.Drawing.Point(273, 64);
             this.pictureBoxDelFactory.Name = "pictureBoxDelFactory";
@@ -354,11 +376,15 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "hjhj",
+            "jkjkj"});
             this.comboBox1.Location = new System.Drawing.Point(45, 64);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(166, 29);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.Tag = "";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panelCarInfo
             // 
@@ -378,7 +404,7 @@
             this.panelCarInfo.Controls.Add(this.label3);
             this.panelCarInfo.Location = new System.Drawing.Point(490, 24);
             this.panelCarInfo.Name = "panelCarInfo";
-            this.panelCarInfo.Size = new System.Drawing.Size(362, 417);
+            this.panelCarInfo.Size = new System.Drawing.Size(362, 484);
             this.panelCarInfo.TabIndex = 2;
             this.panelCarInfo.Visible = false;
             // 
@@ -1624,6 +1650,7 @@
             // 
             // panelFactoryInfo
             // 
+            this.panelFactoryInfo.AutoScroll = true;
             this.panelFactoryInfo.BackColor = System.Drawing.SystemColors.Info;
             this.panelFactoryInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFactoryInfo.Controls.Add(this.label9);
@@ -1634,7 +1661,7 @@
             this.panelFactoryInfo.Controls.Add(this.textBoxFactoryName);
             this.panelFactoryInfo.Location = new System.Drawing.Point(486, 24);
             this.panelFactoryInfo.Name = "panelFactoryInfo";
-            this.panelFactoryInfo.Size = new System.Drawing.Size(362, 484);
+            this.panelFactoryInfo.Size = new System.Drawing.Size(370, 419);
             this.panelFactoryInfo.TabIndex = 6;
             this.panelFactoryInfo.Visible = false;
             // 
@@ -1663,6 +1690,7 @@
             this.textBoxURL.Name = "textBoxURL";
             this.textBoxURL.Size = new System.Drawing.Size(152, 29);
             this.textBoxURL.TabIndex = 9;
+            this.textBoxURL.TextChanged += new System.EventHandler(this.textBoxURL_TextChanged);
             // 
             // label6
             // 
@@ -1756,17 +1784,17 @@
             this.textBoxModelName.Size = new System.Drawing.Size(152, 29);
             this.textBoxModelName.TabIndex = 6;
             // 
-            // buttonSave
+            // buttonSaveChanges
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.LightGreen;
-            this.buttonSave.Font = new System.Drawing.Font("Papyrus-RU", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.Location = new System.Drawing.Point(491, 438);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(362, 64);
-            this.buttonSave.TabIndex = 8;
-            this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSaveChanges.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonSaveChanges.Font = new System.Drawing.Font("Papyrus-RU", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveChanges.Location = new System.Drawing.Point(484, 442);
+            this.buttonSaveChanges.Name = "buttonSaveChanges";
+            this.buttonSaveChanges.Size = new System.Drawing.Size(372, 64);
+            this.buttonSaveChanges.TabIndex = 12;
+            this.buttonSaveChanges.Text = "Сохранить изменения";
+            this.buttonSaveChanges.UseVisualStyleBackColor = false;
+            this.buttonSaveChanges.Click += new System.EventHandler(this.buttonSaveChanges_Click);
             // 
             // MainForm
             // 
@@ -1775,12 +1803,12 @@
             this.BackgroundImage = global::CarDatabase.Properties.Resources._6;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(881, 520);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.panelCarInfo);
+            this.Controls.Add(this.buttonSaveChanges);
             this.Controls.Add(this.panelFactoryInfo);
             this.Controls.Add(this.panelModelInfo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlSearch);
+            this.Controls.Add(this.panelCarInfo);
             this.Font = new System.Drawing.Font("Papyrus-RU", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1974,7 +2002,8 @@
         private System.Windows.Forms.TextBox textBoxAmountOfSeats;
         private System.Windows.Forms.ComboBox comboBoxMaterial;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonUpload;
+        private System.Windows.Forms.Button buttonSaveChanges;
     }
 }
 
