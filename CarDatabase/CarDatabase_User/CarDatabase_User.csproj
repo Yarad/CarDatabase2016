@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9C32AA4-B27D-4465-9E78-8375D3AA5A37}</ProjectGuid>
+    <ProjectGuid>{475168C1-A4AC-41D2-B2D9-E819FE56CC9D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarDatabase</RootNamespace>
-    <AssemblyName>CarDatabase</AssemblyName>
+    <RootNamespace>CarDatabase_User</RootNamespace>
+    <AssemblyName>CarDatabase_User</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,16 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BytesRoad.Net.Ftp">
-      <HintPath>Libraries\BytesRoad.Net.Ftp.dll</HintPath>
-    </Reference>
-    <Reference Include="BytesRoad.Net.Sockets">
-      <HintPath>Libraries\BytesRoad.Net.Sockets.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,25 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
-    <Compile Include="CarInfoEditing.cs" />
-    <Compile Include="Component1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Component1.Designer.cs">
-      <DependentUpon>Component1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_ADMIN.cs">
+    <Compile Include="Form_USER.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_ADMIN.Designer.cs">
-      <DependentUpon>Form_ADMIN.cs</DependentUpon>
+    <Compile Include="Form_USER.Designer.cs">
+      <DependentUpon>Form_USER.cs</DependentUpon>
     </Compile>
-    <Compile Include="InternetWork.cs" />
     <Compile Include="Other.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_ADMIN.resx">
-      <DependentUpon>Form_ADMIN.cs</DependentUpon>
+    <EmbeddedResource Include="Form_USER.resx">
+      <DependentUpon>Form_USER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,9 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,14 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Icon.ico" />
-    <None Include="Resourses\search.png" />
-    <None Include="Resourses\DeleteGreen.png" />
-    <None Include="Resourses\AddGreen.png" />
-    <None Include="Resourses\Add.png" />
-    <None Include="Resourses\6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

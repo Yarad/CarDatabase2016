@@ -1,0 +1,9 @@
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase_User\bin\Debug\CarDatabase_User.exe.config
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase_User\bin\Debug\CarDatabase_User.exe
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase_User\bin\Debug\CarDatabase_User.pdb
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase_User\obj\Debug\CarDatabase_User.Properties.Resources.resources
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase_User\obj\Debug\CarDatabase_User.csproj.GenerateResource.Cache
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase_User\obj\Debug\CarDatabase_User.exe
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase_User\obj\Debug\CarDatabase_User.pdb
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase_User\obj\Debug\CarDatabase_User.csprojResolveAssemblyReference.cache
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase_User\obj\Debug\CarDatabase_User.UserForm.resources

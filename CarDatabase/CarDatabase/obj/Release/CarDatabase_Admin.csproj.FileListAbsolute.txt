@@ -1,0 +1,10 @@
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\bin\Release\CarDatabase.exe.config
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\bin\Release\CarDatabase.exe
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\bin\Release\CarDatabase.pdb
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\bin\Release\BytesRoad.Net.Ftp.dll
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\bin\Release\BytesRoad.Net.Sockets.dll
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\obj\Release\CarDatabase.MainForm.resources
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\obj\Release\CarDatabase.Properties.Resources.resources
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\obj\Release\CarDatabase_Admin.csproj.GenerateResource.Cache
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\obj\Release\CarDatabase.exe
+D:\Документы\Учёба\Си\Курсовой\CarDatabase2016\CarDatabase\CarDatabase\obj\Release\CarDatabase.pdb
